@@ -69,7 +69,7 @@ namespace Scada.Config
         public string LogDir { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the default connection.
+        /// Gets or sets the name of the default database connection.
         /// </summary>
         public string DefaultConnection { get; set; }
 
@@ -79,7 +79,7 @@ namespace Scada.Config
         public string ActiveStorage { get; set; }
 
         /// <summary>
-        /// Gets the connection options accessed by connection name.
+        /// Gets the database connection options accessed by connection name.
         /// </summary>
         public SortedList<string, DbConnectionOptions> Connections { get; private set; }
 
@@ -217,6 +217,40 @@ namespace Scada.Config
                 Connections.TryGetValue(DefaultConnection, out DbConnectionOptions options)
                 ? options
                 : new DbConnectionOptions();
+        }
+
+        /// <summary>
+        /// Gets the database connection options for the specified connection name, 
+        /// or the default options if the connection name is empty.
+        /// </summary>
+        public DbConnectionOptions GetConnectionOptions(string connectionName)
+        {
+            if (string.IsNullOrEmpty(connectionName))
+            {
+                // default connection
+                return GetDefaultConnectionOptions();
+            }
+            else if (Connections.TryGetValue(connectionName, out DbConnectionOptions connectionOptions))
+            {
+                // named connection
+                return connectionOptions;
+            }
+            else
+            {
+                throw new ScadaException(Locale.IsRussian ?
+                    "Параметры соединения с БД не найдены." :
+                    "Database connection options not found.")
+                { MessageIsPublic = true };
+            }
+        }
+
+        /// <summary>
+        /// Gets the database connection string for the specified connection name, 
+        /// or the default connection string if the connection name is empty.
+        /// </summary>
+        public string GetConnectionString(string connectionName)
+        {
+            return GetConnectionOptions(connectionName).BuildConnectionString();
         }
 
         /// <summary>
