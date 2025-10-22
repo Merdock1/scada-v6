@@ -16,21 +16,21 @@ class RazorPager {
         this.pagerElem = $("#" + pagerElemID);
         this.options = Object.assign({}, RazorPager.defaultOptions, opt_options);
 
-        this.pagerElem.find("a.page-link").on("click", function () {
-            Pager._handlePageClick($(this));
-            return false;
+        this.pagerElem.find("a.page-link").on("click", (event) => {
+            this._handlePageClick();
+            event.preventDefault();
         });
     }
 
     // Handles a user click on a page item.
-    static _handlePageClick(elem) {
-        let pageIndex = elem.data("page");
-        elem.closest(".rs-pager").find("input:hidden:first").val(pageIndex);
+    _handlePageClick() {
+        let pageIndex = this.pagerElem.data("page");
+        this.pagerElem.closest(".rs-pager").find("input:hidden:first").val(pageIndex);
 
         if (this.options.submitOnClick) {
-            elem.closest("form").trigger("submit");
+            this.pagerElem.closest("form").trigger("submit");
         } else {
-            elem.trigger(RazorPager.PAGE_CLICK_EVENT, thisObj.pageIndex);
+            this.pagerElem.trigger(RazorPager.PAGE_CLICK_EVENT, pageIndex);
         }
     }
 
@@ -39,15 +39,7 @@ class RazorPager {
         this.pagerElem.find("input:hidden:first").val(0);
 
         if (opt_submit) {
-            elem.closest("form").trigger("submit");
+            this.pagerElem.closest("form").trigger("submit");
         }
-    }
-
-    // Binds events to all pagers of the document.
-    static bindEvents() {
-        $(".rs-pager a.page-link").on("click", function () {
-            Pager._handlePageClick($(this));
-            return false;
-        });
     }
 }
