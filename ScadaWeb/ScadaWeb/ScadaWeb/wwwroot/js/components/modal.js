@@ -212,7 +212,7 @@ class ModalManager extends ModalBase {
             let formElem = modalWnd.$("form:first");
 
             if (formElem.length > 0 && formElem[0].reportValidity()) {
-                formElem.submit();
+                formElem.trigger("submit");
             }
         }
     }

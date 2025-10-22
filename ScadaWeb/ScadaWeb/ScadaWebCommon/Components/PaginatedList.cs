@@ -20,7 +20,7 @@
  * 
  * Author   : Mikhail Shiryaev
  * Created  : 2022
- * Modified : 2023
+ * Modified : 2025
  */
 
 namespace Scada.Web.Components
@@ -112,7 +112,7 @@ namespace Scada.Web.Components
         /// <summary>
         /// Populates the list with the items of the specified page.
         /// </summary>
-        public void Fill(IEnumerable<T> source, int pageIndex)
+        public void Fill(IQueryable<T> source, int pageIndex)
         {
             ArgumentNullException.ThrowIfNull(source, nameof(source));
             int totalItems = source.Count();

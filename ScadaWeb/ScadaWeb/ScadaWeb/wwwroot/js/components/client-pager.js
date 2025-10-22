@@ -5,8 +5,8 @@ class ClientPager {
     static DEFAULT_PAGE_SIZE = 10;
     // The number of pages displayed by a pager, not including the Previous and Next buttons.
     static DISPLAY_PAGE_COUNT = 9;
-    // Notifies that a page link has been clicked.
-    static PAGE_CLICK_EVENT = "rs:pageClick";
+    // Notifies that a page item has been clicked.
+    static PAGE_CLICK_EVENT = "pageclick.rs.pager";
 
     // The jQuery object that represents the pager.
     pagerElem;
