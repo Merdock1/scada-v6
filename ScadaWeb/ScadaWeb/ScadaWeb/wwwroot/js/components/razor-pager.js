@@ -17,14 +17,14 @@ class RazorPager {
         this.options = Object.assign({}, RazorPager.defaultOptions, opt_options);
 
         this.pagerElem.find("a.page-link").on("click", (event) => {
-            this._handlePageClick();
+            this._handlePageClick($(event.target));
             event.preventDefault();
         });
     }
 
     // Handles a user click on a page item.
-    _handlePageClick() {
-        let pageIndex = this.pagerElem.data("page");
+    _handlePageClick(linkElem) {
+        let pageIndex = linkElem.data("page");
         this.pagerElem.closest(".rs-pager").find("input:hidden:first").val(pageIndex);
 
         if (this.options.submitOnClick) {

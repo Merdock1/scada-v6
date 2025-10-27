@@ -1,5 +1,5 @@
 ﻿$(function () {
-    let pager = new Pager("pgrCnl");
+    let pager = new RazorPager("pgrCnl", { submitOnClick: true });
 
     $("#selObj").on("change", function () {
         pager.reset();
