@@ -279,6 +279,12 @@ class ModalManager extends ModalBase {
                 // remove overlay to allow user activity
                 tempOverlay.remove();
             })
+            .on('hide.bs.modal', function () {
+                // remove focus to prevent browser warning
+                if (document.activeElement instanceof HTMLElement) {
+                    document.activeElement.blur();
+                }
+            })
             .on('hidden.bs.modal', function () {
                 let callback = $(this).data("rs-callback");
 
