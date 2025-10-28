@@ -393,6 +393,7 @@ class ModalManager extends ModalBase {
 class ModalBoxOptions {
     title = null;
     alert = null;
+    isHtml = false;
 
     constructor(fields) {
         Object.assign(this, fields);
@@ -416,7 +417,14 @@ class ModalBox extends ModalBase {
         this.setModalTitle(modalElem, options.title ?? document.title);
 
         if (options.alert) {
-            let alertElem = $(`<div class='alert alert-${options.alert}'></div>`).text(message);
+            let alertElem = $(`<div class='alert alert-${options.alert}'></div>`);
+
+            if (options.isHtml) {
+                alertElem.html(message);
+            } else {
+                alertElem.text(message);
+            }
+
             this.setModalBody(modalElem, alertElem);
         } else {
             this.setModalBody(modalElem, message);
