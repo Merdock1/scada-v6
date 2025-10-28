@@ -238,7 +238,7 @@ class ModalManager extends ModalBase {
         $("body").append(tempOverlay);
 
         // create a modal
-        let options = opt_options || new ModalOptions();
+        let options = Object.assign(new ModalOptions(), opt_options);
         let modalElem = ModalBase.createModalElem();
         ModalBase.setModalSize(modalElem, options.size);
         ModalBase.addModalFooter(modalElem, options.buttons);
