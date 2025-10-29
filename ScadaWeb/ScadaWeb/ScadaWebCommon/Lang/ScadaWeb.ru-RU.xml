@@ -61,7 +61,7 @@
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Error">
     <Phrase key="PageTitle">Ошибка</Phrase>
-    <Phrase key="ErrorMessage">При обработке вашего запроса произошла ошибка.</Phrase>
+    <Phrase key="ErrorMessage">При обработке вашего запроса произошла ошибка. Подробности ошибки записаны в журнал приложения.</Phrase>
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Login">
     <Phrase key="PageTitle">Вход в систему</Phrase>
