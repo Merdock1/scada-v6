@@ -1,5 +1,5 @@
 ﻿@page "/Errors/{code:int}"
-@model Errors.StatusCodeModel
+@model StatusCodeModel
 @{
     Response.StatusCode = Model.Code; // important to restore status
     ViewBag.Title = Model.Title;

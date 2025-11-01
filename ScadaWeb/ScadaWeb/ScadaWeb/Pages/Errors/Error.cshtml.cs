@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Rapid Software LLC. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,10 +12,11 @@ using Scada.Log;
 /// Represents a page containing an error message.
 /// <para>Представляет страницу, которая содержит сообщение об ошибке.</para>
 /// </summary>
-namespace Scada.Web.Pages
+namespace Scada.Web.Pages.Errors
 {
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [AllowAnonymous]
     [IgnoreAntiforgeryToken]
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel(
         ILogger<ErrorModel> logger,
         ILog log) : PageModel

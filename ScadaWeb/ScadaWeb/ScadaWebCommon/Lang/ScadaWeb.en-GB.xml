@@ -16,6 +16,14 @@
     <Phrase key="ViewMissingFromCache">View is missing from the cache.</Phrase>
     <Phrase key="ViewUndefined">View is undefined.</Phrase>
   </Dictionary>
+  <Dictionary key="Scada.Web.Pages.Errors.AccessDenied">
+    <Phrase key="PageTitle">Access Denied</Phrase>
+    <Phrase key="ErrorMessage">You have insufficient rights to access the requested resource.</Phrase>
+  </Dictionary>
+  <Dictionary key="Scada.Web.Pages.Errors.Error">
+    <Phrase key="PageTitle">Error</Phrase>
+    <Phrase key="ErrorMessage">An error occurred while processing your request. Error details are written to the application log.</Phrase>
+  </Dictionary>
   <Dictionary key="Scada.Web.Pages.Errors.StatusCode">
     <Phrase key="PageTitle">Error {0}</Phrase>
     <Phrase key="ErrorMessage">An error occurred while processing your request.</Phrase>
@@ -51,10 +59,6 @@
   <Dictionary key="Scada.Web.Pages.About">
     <Phrase key="PageTitle">About</Phrase>
   </Dictionary>
-  <Dictionary key="Scada.Web.Pages.AccessDenied">
-    <Phrase key="PageTitle">Access Denied</Phrase>
-    <Phrase key="ErrorMessage">You have insufficient rights to access the requested resource.</Phrase>
-  </Dictionary>
   <Dictionary key="Scada.Web.Pages.CnlSelect">
     <Phrase key="PageTitle">Select Channels</Phrase>
     <Phrase key="lblObj">Object</Phrase>
@@ -65,10 +69,6 @@
     <Phrase key="SelectObjectItem">-- Select an object --</Phrase>
     <Phrase key="FilterRequired">Please specify a filter.</Phrase>
     <Phrase key="NoChannels">No channels matching the filter.</Phrase>
-  </Dictionary>
-  <Dictionary key="Scada.Web.Pages.Error">
-    <Phrase key="PageTitle">Error</Phrase>
-    <Phrase key="ErrorMessage">An error occurred while processing your request. Error details are written to the application log.</Phrase>
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Login">
     <Phrase key="PageTitle">Login</Phrase>

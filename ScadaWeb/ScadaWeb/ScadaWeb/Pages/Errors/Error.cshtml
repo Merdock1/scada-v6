@@ -1,7 +1,7 @@
 ﻿@page
 @model ErrorModel
 @{
-    dynamic dict = Locale.GetDictionary("Scada.Web.Pages.Error");
+    dynamic dict = Locale.GetDictionary("Scada.Web.Pages.Errors.Error");
     ViewBag.Title = dict.PageTitle;
     Model.WriteError(); // on get and post
 }
