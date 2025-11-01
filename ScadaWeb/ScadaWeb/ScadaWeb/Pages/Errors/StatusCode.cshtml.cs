@@ -17,6 +17,9 @@ namespace Scada.Web.Pages.Errors
     {
         private readonly dynamic dict = Locale.GetDictionary("Scada.Web.Pages.Errors.StatusCode");
 
+        [TempData]
+        public string ErrorMessage { get; set; }
+
         [BindProperty(SupportsGet = true)]
         public int Code { get; set; }
 
@@ -25,18 +28,18 @@ namespace Scada.Web.Pages.Errors
 
         public string Header => Code switch
         {
-            401 => dict.Header401,
-            403 => dict.Header403,
-            404 => dict.Header404,
+            401 => dict.Error401Header,
+            403 => dict.Error403Header,
+            404 => dict.Error404Header,
             _ => string.Format(dict.PageTitle, Code)
         };
 
-        public string ErrorMessage => Code switch
+        public string Message => Code switch
         {
-            401 => dict.ErrorMessage401,
-            403 => dict.ErrorMessage403,
-            404 => dict.ErrorMessage404,
-            _ => dict.ErrorMessage
+            401 => dict.Error401Message,
+            403 => dict.Error403Message,
+            404 => dict.Error404Message,
+            _ => ErrorMessage ?? dict.ErrorMessage
         };
     }
 }

@@ -26,13 +26,13 @@
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Errors.StatusCode">
     <Phrase key="PageTitle">Ошибка {0}</Phrase>
-    <Phrase key="Header401">Требуется авторизация</Phrase>
-    <Phrase key="Header403">Доступ запрещен</Phrase>
-    <Phrase key="Header404">Не найдено</Phrase>
+    <Phrase key="Error401Header">Требуется авторизация</Phrase>
+    <Phrase key="Error403Header">Доступ запрещен</Phrase>
+    <Phrase key="Error404Header">Не найдено</Phrase>
     <Phrase key="ErrorMessage">При обработке вашего запроса произошла ошибка.</Phrase>
-    <Phrase key="ErrorMessage401">Пожалуйста, войдите в систему.</Phrase>
-    <Phrase key="ErrorMessage403">У вас недостаточно прав для доступа к запрошенному ресурсу.</Phrase>
-    <Phrase key="ErrorMessage404">Страница или объект не найдены.</Phrase>
+    <Phrase key="Error401Message">Пожалуйста, войдите в систему.</Phrase>
+    <Phrase key="Error403Message">У вас недостаточно прав для доступа к запрошенному ресурсу.</Phrase>
+    <Phrase key="Error404Message">Страница или объект не найдены.</Phrase>
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Shared._MainLayout">
     <Phrase key="spanMenuBtn_ToolTip">Показать/скрыть меню</Phrase>
