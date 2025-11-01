@@ -20,7 +20,7 @@
  * 
  * Author   : Mikhail Shiryaev
  * Created  : 2021
- * Modified : 2024
+ * Modified : 2025
  */
 
 using Microsoft.AspNetCore.Authentication.Cookies;
