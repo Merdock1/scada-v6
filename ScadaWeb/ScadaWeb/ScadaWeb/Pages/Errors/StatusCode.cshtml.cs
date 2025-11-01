@@ -20,13 +20,22 @@ namespace Scada.Web.Pages.Errors
         [BindProperty(SupportsGet = true)]
         public int Code { get; set; }
 
+
         public string Title => string.Format(dict.PageTitle, Code);
+
+        public string Header => Code switch
+        {
+            401 => dict.Header401,
+            403 => dict.Header403,
+            404 => dict.Header404,
+            _ => string.Format(dict.PageTitle, Code)
+        };
 
         public string ErrorMessage => Code switch
         {
-            401 => dict.Error401Message,
-            403 => dict.Error403Message,
-            404 => dict.Error404Message,
+            401 => dict.ErrorMessage401,
+            403 => dict.ErrorMessage403,
+            404 => dict.ErrorMessage404,
             _ => dict.ErrorMessage
         };
     }

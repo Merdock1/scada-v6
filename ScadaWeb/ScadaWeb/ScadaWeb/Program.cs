@@ -122,7 +122,6 @@ namespace Scada.Web
                 .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
-                    options.AccessDeniedPath = WebPath.AccessDeniedPage;
                     options.LoginPath = WebPath.LoginPage;
                     options.LogoutPath = WebPath.LogoutPage;
                     options.Events = new CookieAuthEvents();

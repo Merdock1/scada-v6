@@ -26,10 +26,13 @@
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Errors.StatusCode">
     <Phrase key="PageTitle">Error {0}</Phrase>
+    <Phrase key="Header401">Authorization Required</Phrase>
+    <Phrase key="Header403">Access Denied</Phrase>
+    <Phrase key="Header404">Not Found</Phrase>
     <Phrase key="ErrorMessage">An error occurred while processing your request.</Phrase>
-    <Phrase key="Error401Message">Authorization required.</Phrase>
-    <Phrase key="Error403Message">Access denied.</Phrase>
-    <Phrase key="Error404Message">Page or object not found.</Phrase>
+    <Phrase key="ErrorMessage401">Please log in.</Phrase>
+    <Phrase key="ErrorMessage403">You have insufficient rights to access the requested resource.</Phrase>
+    <Phrase key="ErrorMessage404">Page or object not found.</Phrase>
   </Dictionary>
   <Dictionary key="Scada.Web.Pages.Shared._MainLayout">
     <Phrase key="spanMenuBtn_ToolTip">Show/Hide Menu</Phrase>
