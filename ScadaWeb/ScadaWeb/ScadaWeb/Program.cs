@@ -215,6 +215,10 @@ namespace Scada.Web
             }
 
             app.UseStaticFiles();
+            app.UseWhen(ctx => !ctx.Request.Path.StartsWithSegments("/api"), webApp =>
+            {
+                webApp.UseStatusCodePagesWithReExecute("/Errors/{0}");
+            });
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -16,6 +16,13 @@
     <Phrase key="ViewMissingFromCache">Представление отсутствует в кэше.</Phrase>
     <Phrase key="ViewUndefined">Представление не определено.</Phrase>
   </Dictionary>
+  <Dictionary key="Scada.Web.Pages.Errors.StatusCode">
+    <Phrase key="PageTitle">Ошибка {0}</Phrase>
+    <Phrase key="ErrorMessage">При обработке вашего запроса произошла ошибка.</Phrase>
+    <Phrase key="Error401Message">Требуется авторизация.</Phrase>
+    <Phrase key="Error403Message">Доступ запрещён.</Phrase>
+    <Phrase key="Error404Message">Страница или объект не найдены.</Phrase>
+  </Dictionary>
   <Dictionary key="Scada.Web.Pages.Shared._MainLayout">
     <Phrase key="spanMenuBtn_ToolTip">Показать/скрыть меню</Phrase>
     <Phrase key="spanNotifBtn_ToolTip">Показать/скрыть уведомления</Phrase>
