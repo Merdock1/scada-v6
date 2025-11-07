@@ -182,7 +182,7 @@ namespace Scada.Comm.Drivers.DrvOpcUa.Logic
                             if (cnl.IsString())
                             {
                                 itemConfig.DataTypeName = typeof(string).FullName;
-                                itemConfig.DataLen = DeviceTag.CalcDataLength(cnl.DataLen.Value, TagDataType.Unicode);
+                                itemConfig.DataLen = cnl.GetDataLength() * 4; // Unicode string
                             }
                             else
                             {
