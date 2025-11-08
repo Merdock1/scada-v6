@@ -212,6 +212,16 @@ class ScadaUtils {
         return lang === "ru" || lang.startsWith("ru");
     }
 
+    // Checks if the specified string represents valid JSON.
+    static isValidJSON(s) {
+        try {
+            JSON.parse(s);
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
     // Converts the string to an array of integers.
     static parseIntArray(s) {
         return s ? s.split(",").map(x => parseInt(x)) : [];
