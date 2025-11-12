@@ -20,7 +20,7 @@
  * 
  * Author   : Mikhail Shiryaev
  * Created  : 2016
- * Modified : 2024
+ * Modified : 2025
  */
 
 using Microsoft.AspNetCore.Html;
@@ -207,6 +207,14 @@ namespace Scada.Web
         public static HtmlString HtmlEncodeWithBreak(this string s)
         {
             return HttpUtility.HtmlEncode(s).ReplaceLineEndings("<br />").ToHtmlString();
+        }
+
+        /// <summary>
+        /// Gets the beginning of the string and replaces newline sequences.
+        /// </summary>
+        public static HtmlString GetPreviewBreakLines(this string s, int maxLength = ScadaUtils.StringPreviewLength)
+        {
+            return s.GetPreview(maxLength).HtmlEncodeWithBreak();
         }
 
         /// <summary>
