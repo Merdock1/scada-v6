@@ -461,6 +461,7 @@ class Severity {
 // The stub of an application environment object.
 const appEnvStub = {
     isStub: true,
+    basePath: "",
     rootPath: "/",
     locale: "en-GB",
     productName: "Rapid SCADA"
