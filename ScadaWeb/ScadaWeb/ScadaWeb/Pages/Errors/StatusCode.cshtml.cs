@@ -34,12 +34,12 @@ namespace Scada.Web.Pages.Errors
             _ => string.Format(dict.PageTitle, Code)
         };
 
-        public string Message => Code switch
+        public string Message => ErrorMessage ?? Code switch
         {
             401 => dict.Error401Message,
             403 => dict.Error403Message,
             404 => dict.Error404Message,
-            _ => ErrorMessage ?? dict.ErrorMessage
+            _ => dict.ErrorMessage
         };
     }
 }
