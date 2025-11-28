@@ -238,6 +238,10 @@ body {
     .main-form {
         max-width: $form-width-default;
     }
+
+    .main-form-lg {
+        max-width: $form-width-large;
+    }
 }
 
 /********** Stats **********/
