@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ScadaWebDictionaries>
+  <!-- Common phrases -->
   <Dictionary key="Scada.Web">
     <Phrase key="CorrectErrors">Пожалуйста исправьте следующие ошибки:</Phrase>
     <Phrase key="IllegalRole">Недопустимая роль пользователя.</Phrase>
@@ -7,6 +8,23 @@
     <Phrase key="UnknownUsername">Неизвестный</Phrase>
     <Phrase key="AccessDenied">Доступ запрещен</Phrase>
   </Dictionary>
+  <Dictionary key="Scada.Web.TableForms">
+    <Phrase key="SearchPlaceholder">Поиск</Phrase>
+    <Phrase key="NewItem">Новая запись</Phrase>
+    <Phrase key="ViewItem">Просмотреть запись</Phrase>
+    <Phrase key="EditItem">Редактировать запись</Phrase>
+    <Phrase key="DeleteItem">Удалить запись</Phrase>
+    <Phrase key="DeleteItemConfirm">Вы уверены, что хотите удалить запись?</Phrase>
+    <Phrase key="NoData">Нет данных</Phrase>
+  </Dictionary>
+  <Dictionary key="Scada.Web.TableForms.Js">
+    <Phrase key="LoadDataError">Ошибка при загрузке данных.</Phrase>
+    <Phrase key="DeleteItemConfirm">Вы уверены, что хотите удалить запись?</Phrase>
+    <Phrase key="ItemExists">Запись уже существует.</Phrase>
+    <Phrase key="FillOutFields">Пожалуйста, заполните обязательные поля.</Phrase>
+    <Phrase key="ValidJsonRequired">Требуется корректный JSON.</Phrase>
+  </Dictionary>
+  <!-- ScadaWeb.dll -->
   <Dictionary key="Scada.Web.Code.ViewLoader">
     <Phrase key="ViewNotSpecified">Запрошенное представление не задано.</Phrase>
     <Phrase key="ViewNotExists">Запрошенное представление не существует.</Phrase>

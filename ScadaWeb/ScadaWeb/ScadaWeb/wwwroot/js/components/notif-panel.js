@@ -437,7 +437,6 @@ class NotifPanel {
 
 // Specifies the notification phrases.
 // Can be changed by a page script.
-// C# naming style. 
 var notifPhrases = {
     noNotif: "No notifications",
     mute: "Mute",

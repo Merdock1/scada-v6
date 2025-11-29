@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ScadaWebDictionaries>
+  <!-- Common phrases -->
   <Dictionary key="Scada.Web">
     <Phrase key="CorrectErrors">Please correct the following errors:</Phrase>
     <Phrase key="IllegalRole">Illegal user role.</Phrase>
@@ -7,6 +8,23 @@
     <Phrase key="UnknownUsername">Unknown</Phrase>
     <Phrase key="AccessDenied">Access denied</Phrase>
   </Dictionary>
+  <Dictionary key="Scada.Web.TableForms">
+    <Phrase key="SearchPlaceholder">Search</Phrase>
+    <Phrase key="NewItem">New Item</Phrase>
+    <Phrase key="ViewItem">View Item</Phrase>
+    <Phrase key="EditItem">Edit Item</Phrase>
+    <Phrase key="DeleteItem">Delete Item</Phrase>
+    <Phrase key="DeleteItemConfirm">Are you sure you want to delete the item?</Phrase>
+    <Phrase key="NoData">No data</Phrase>
+  </Dictionary>
+  <Dictionary key="Scada.Web.TableForms.Js">
+    <Phrase key="LoadDataError">Error loading data.</Phrase>
+    <Phrase key="DeleteItemConfirm">Are you sure you want to delete the item?</Phrase>
+    <Phrase key="ItemExists">The item already exists.</Phrase>
+    <Phrase key="FillOutFields">Please fill out the required fields.</Phrase>
+    <Phrase key="ValidJsonRequired">Valid JSON is required.</Phrase>
+  </Dictionary>
+  <!-- ScadaWeb.dll -->
   <Dictionary key="Scada.Web.Code.ViewLoader">
     <Phrase key="ViewNotSpecified">The requested view is not specified.</Phrase>
     <Phrase key="ViewNotExists">The requested view does not exist.</Phrase>
