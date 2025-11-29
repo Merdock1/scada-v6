@@ -396,8 +396,9 @@ body.left-panel-visible #Main_divLeftPanel {
 #Main_divContent .main-form {
   max-width: 500px;
 }
-#Main_divContent .report-args-lg,
-#Main_divContent .search-args-lg,
+#Main_divContent .main-form-sm {
+  max-width: 300px;
+}
 #Main_divContent .main-form-lg {
   max-width: 800px;
 }
