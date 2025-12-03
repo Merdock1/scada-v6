@@ -30,7 +30,7 @@ class TableFormBase {
     }
 
     init() {
-        this._pager = new RazorPager(this._elemId.pager);
+        this._pager = typeof RazorPager === "function" ? new RazorPager(this._elemId.pager) : null;
         this._bindEvents();
     }
 }
@@ -83,9 +83,11 @@ class TableFormAsync extends TableFormBase {
             await this._unapproveItem(this._getItemId(event.target));
         });
 
-        $(this._elemId.tableWrapper).on(RazorPager.PAGE_CLICK_EVENT, RazorPager.PAGER_CLASS, async () => {
-            await this._loadData();
-        });
+        if (this._pager) {
+            $(this._elemId.tableWrapper).on(RazorPager.PAGE_CLICK_EVENT, RazorPager.PAGER_CLASS, async () => {
+                await this._loadData();
+            });
+        }
     }
 
     async _loadData(opt_handler, opt_params) {
@@ -243,9 +245,11 @@ class TableFormSync extends TableFormBase {
             this._loadData();
         });
 
-        $(this._elemId.tableWrapper).on(RazorPager.PAGE_CLICK_EVENT, RazorPager.PAGER_CLASS, async () => {
-            this._loadData();
-        });
+        if (this._pager) {
+            $(this._elemId.tableWrapper).on(RazorPager.PAGE_CLICK_EVENT, RazorPager.PAGER_CLASS, async () => {
+                this._loadData();
+            });
+        }
     }
 
     _loadData() {
