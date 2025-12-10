@@ -11,6 +11,7 @@ namespace Scada.Report
     /// </summary>
     public enum PeriodControl
     {
+        None,
         SingleDate,
         SingleMonth,
         DatePeriod,
