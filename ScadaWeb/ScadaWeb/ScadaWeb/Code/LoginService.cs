@@ -25,6 +25,7 @@
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Caching.Memory;
 using Scada.Data.Const;
 using Scada.Data.Models;
 using Scada.Lang;
@@ -41,26 +42,15 @@ namespace Scada.Web.Code
     /// Performs user login and logout.
     /// <para>Выполняет вход и выход пользователя.</para>
     /// </summary>
-    internal class LoginService : ILoginService
+    internal class LoginService(
+        IWebContext webContext,
+        IAuditLog auditLog,
+        IClientAccessor clientAccessor,
+        IHttpContextAccessor httpContextAccessor,
+        IMemoryCache memoryCache) : ILoginService
     {
-        private readonly IWebContext webContext;
-        private readonly IAuditLog auditLog;
-        private readonly IClientAccessor clientAccessor;
-        private readonly HttpContext httpContext;
-
-
-        /// <summary>
-        /// Initializes a new instance of the class.
-        /// </summary>
-        public LoginService(IWebContext webContext, IAuditLog auditLog,
-            IClientAccessor clientAccessor, IHttpContextAccessor httpContextAccessor)
-        {
-            this.webContext = webContext ?? throw new ArgumentNullException(nameof(webContext));
-            this.auditLog = auditLog ?? throw new ArgumentNullException(nameof(auditLog));
-            this.clientAccessor = clientAccessor ?? throw new ArgumentNullException(nameof(clientAccessor));
-            httpContext = httpContextAccessor?.HttpContext ??
-                throw new ArgumentException("HTTP context must not be null.", nameof(httpContextAccessor));
-        }
+        private readonly HttpContext httpContext = httpContextAccessor?.HttpContext ??
+            throw new ArgumentException("HTTP context must not be null.", nameof(httpContextAccessor));
 
 
         /// <summary>
@@ -188,6 +178,7 @@ namespace Scada.Web.Code
                 };
 
                 await httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                memoryCache.Remove(WebUtils.GetUserCacheKey(userLoginArgs.UserID));
                 webContext.Log.WriteAction(Locale.IsRussian ?
                     "Пользователь {0} вышел из системы, IP {1}" :
                     "User {0} is logged out, IP {1}",

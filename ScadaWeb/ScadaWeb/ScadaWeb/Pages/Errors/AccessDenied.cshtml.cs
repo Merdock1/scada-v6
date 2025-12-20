@@ -4,7 +4,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Scada.Web.Pages
+namespace Scada.Web.Pages.Errors
 {
     /// <summary>
     /// Represents a page containing an insufficient rights message.
